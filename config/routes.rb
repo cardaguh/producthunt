@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources :users, only: [:new, :create]
-  resources :products
+  resources :products do
+    resources :comments, only: [:create]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get 'products', to: 'products#index'
   #
