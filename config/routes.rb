@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   # resources :products, only: [:index]
   # resources :products, except: [:index, :create, :new, :update]
   resources :products
+
+  root 'products#index'
 end
