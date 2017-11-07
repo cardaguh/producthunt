@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  root 'products#index'
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: "sessions#create"
+
   resources :users, only: [:new, :create]
+  resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get 'products', to: 'products#index'
   #
@@ -17,7 +23,7 @@ Rails.application.routes.draw do
 
   # resources :products, only: [:index]
   # resources :products, except: [:index, :create, :new, :update]
-  resources :products
 
-  root 'products#index'
+
+
 end
